@@ -1,0 +1,19 @@
+﻿<Window x:Class="prjWpfApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prjWpfApp.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ComboBox HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="120"
+                  ItemsSource="{Binding Cities}" SelectedItem="{Binding SelectedCity}"/>
+        <TextBox HorizontalAlignment="Left" Margin="150,32,0,0" VerticalAlignment="Top" Width="125"
+                  Text="{Binding Limit, UpdateSourceTrigger=PropertyChanged}" Height="18"/>
+        <Button Content="獲得資料" HorizontalAlignment="Left" Margin="293,32,0,0" VerticalAlignment="Top" Width="120"
+                Command="{Binding FetchDataCommand}"/>
+        <DataGrid AutoGenerateColumns="True" HorizontalAlignment="Left" Height="342" Margin="10,70,0,0" VerticalAlignment="Top" Width="760"
+                  ItemsSource="{Binding Invoices}" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"/>
+    </Grid>
+</Window>
